@@ -3,3 +3,21 @@
   height: 18px;
   margin-top: -3px;
 }
+
+#pikiz_option_table {
+  width: 100%;
+}
+
+#pikiz_option_table td{
+  width: 50%;
+  vertical-align: top;
+}
+
+#pikiz_option_table code {
+  width: 300px;
+}
+
+#pikiz_option_table pre {
+  word-break: break-all;
+  word-wrap: break-word;
+}

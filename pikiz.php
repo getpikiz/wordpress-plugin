@@ -13,55 +13,18 @@ Text Domain: my-toolset
 */
 
 define( 'PIKIZ_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'PIKIZ_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-class wp_pikiz {
-  public function __construct()
-  {
-    add_action('media_buttons', array(&$this, 'add_pikiz_button'));
-    // add_action('add_meta_boxes', array(&$this, 'add_pikiz_meta_box'));
-    add_action('wp_enqueue_media', array(&$this, 'include_pikiz_js_file'));
-  }
+require_once( PIKIZ_PLUGIN_DIR . 'includes/pikiz-media.php' );
+require_once( PIKIZ_PLUGIN_DIR . 'includes/pikiz-options.php' );
+require_once( PIKIZ_PLUGIN_DIR . 'includes/pikiz-frontend.php' );
 
-  public function add_pikiz_button()
-  {
-    ?>
-    <a href="#" id="pikiz-insert-media" class="button">
-      <img src="<?php echo PIKIZ_PLUGIN_URL. 'images/icon.png' ?>"/>Caption an image</a>
-    <?php
-  }
-
-  public function include_pikiz_js_file()
-  {
-    wp_enqueue_script(
-      'pikiz_js',
-      PIKIZ_PLUGIN_URL . 'js/main.js',
-      array('jquery'),
-      '1.0',
-      true
-    );
-
-    wp_enqueue_style(
-      'pikiz_css',
-      PIKIZ_PLUGIN_URL . 'css/main.css'
-    );
-  }
-
-  public function add_pikiz_meta_box()
-  {
-    add_meta_box(
-      'pikiz_meta_box',
-      __( 'Post thumbnail', 'pikix-post-thumbnail' ),
-      array(&$this, 'pikiz_meta_callback'),
-      'post'
-    );
-  }
-
-  public function pikiz_meta_callback()
-  {
-    echo 'Pikiz meta box';
-  }
-}
+register_activation_hook( __FILE__, array( 'Akismet', 'plugin_activation' ) );
+register_deactivation_hook( __FILE__, array( 'Akismet', 'plugin_deactivation' ) );
 
 if (is_admin()) {
-  $wpp = new wp_pikiz();
+  wp_pikiz_media::init();
+  wp_pikiz_options::init();
+} else {
+  wp_pikiz_frontend::init();
 }

@@ -1,6 +1,7 @@
 ;
 jQuery(function ($) {
-  PIKIZ_URL = "https://localhost:5000";
+  'use strict';
+  var PIKIZ_URL = "https://localhost:5000";
 
   (function (w, d) {
     if (!w.Pikiz || (w.Pikiz && typeof w.Pikiz.init !== "function") ) {
