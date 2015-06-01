@@ -19,12 +19,11 @@ class wp_pikiz_frontend {
     PIKIZ_PLUGIN_URL . 'js/pikiz-frontend.js',
     array('jquery'),
     '1.0',
-    true );
+    true);
 
     wp_enqueue_script('pikiz_frontend_js');
     wp_localize_script( 'pikiz_frontend_js', 'WPPikiz', array(
-      'options' => self::$options,
-      'strings' => array()
+      'options' => self::$options
     ));
   }
 }

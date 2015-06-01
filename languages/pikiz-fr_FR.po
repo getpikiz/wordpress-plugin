@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pikiz\n"
+"POT-Creation-Date: 2015-06-01 16:13+0100\n"
+"PO-Revision-Date: 2015-06-01 16:15+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/pikiz-media.php:16
+msgid "Caption an image"
+msgstr "Sous-titrer une image"
+
+#: includes/pikiz-media.php:40
+msgid "Post thumbnail"
+msgstr "Image à la une"
+
+#: includes/pikiz-options.php:31
+msgid "Api key"
+msgstr "Api Key"
+
+#: includes/pikiz-options.php:39
+msgid "Allow Pikiz on frontend"
+msgstr "Autoriser Pikiz sur le site"
+
+#: includes/pikiz-options.php:47 includes/pikiz-options.php:200
+msgid "Button style"
+msgstr "Style du bouton"
+
+#: includes/pikiz-options.php:55
+msgid "Button size"
+msgstr "Taille du bouton"
+
+#: includes/pikiz-options.php:63
+msgid "Button Language"
+msgstr "Langue du bouton"
+
+#: includes/pikiz-options.php:71
+msgid "Auto"
+msgstr "Auto"
+
+#: includes/pikiz-options.php:79
+msgid "Content type"
+msgstr "Type de contenu"
+
+#: includes/pikiz-options.php:87
+msgid "Button position"
+msgstr "Position du bouton"
+
+#: includes/pikiz-options.php:95
+msgid "Display image button on hover"
+msgstr "Afficher le bouton à la survole de l’image"
+
+#: includes/pikiz-options.php:106 includes/pikiz-options.php:107
+msgid "Pikiz settings"
+msgstr "Paramètres de Pikiz"
+
+#: includes/pikiz-options.php:135
+msgid "Buttons overview"
+msgstr "Aperçu du bouton"
+
+#: includes/pikiz-options.php:138
+msgid "Caption image button"
+msgstr "Bouton pour les images"
+
+#: includes/pikiz-options.php:143
+msgid "Quote text button"
+msgstr "Bouton pour les textes"
+
+#: includes/pikiz-options.php:149
+msgid "Embed code"
+msgstr "Code"
+
+#: includes/pikiz-options.php:153
+msgid "Url of the image :"
+msgstr "Url de l’image"
+
+#: includes/pikiz-options.php:157
+msgid "Target (use CSS selector to target the image) :"
+msgstr "Elément (Utiliser les sélecteurs CSS pour définir l’image)"
+
+#: includes/pikiz-options.php:180
+msgid "Enter your"
+msgstr "Entrez votre"
+
+#: includes/pikiz-options.php:181
+msgid "API Key"
+msgstr "API Key"
+
+#: includes/pikiz-options.php:206
+msgid "Orange"
+msgstr "Orange"
+
+#: includes/pikiz-options.php:212
+msgid "White"
+msgstr "Blanc"
+
+#: includes/pikiz-options.php:227
+msgid "Default"
+msgstr "Défaut"
+
+#: includes/pikiz-options.php:233
+msgid "Large"
+msgstr "Large"
+
+#: includes/pikiz-options.php:247
+msgid "English"
+msgstr "Anglais"
+
+#: includes/pikiz-options.php:252
+msgid "Italian"
+msgstr "Italien"
+
+#: includes/pikiz-options.php:266 includes/pikiz-options.php:369
+msgid ""
+"Uncheck Auto if you want to add Pikiz button only on specific images of your "
+"website."
+msgstr ""
+"Décochez Auto si vous voulez ajouter le bouton de Pikiz seulement sur des "
+"images spécitfiques de votre site"
+
+#: includes/pikiz-options.php:279
+msgid "Image and Text"
+msgstr "Image et Text"
+
+#: includes/pikiz-options.php:284
+msgid "Image"
+msgstr "Image"
+
+#: includes/pikiz-options.php:289
+msgid "Text"
+msgstr "Text"
+
+#: includes/pikiz-options.php:302
+msgid "top-left corner"
+msgstr "Coin haut-gauche"
+
+#: includes/pikiz-options.php:307
+msgid "top-right corner"
+msgstr "Coin haut-droit"
+
+#: includes/pikiz-options.php:312
+msgid "bottom-right corner"
+msgstr "Coin bas-droit"
+
+#: includes/pikiz-options.php:317
+msgid "bottom-left corner"
+msgstr "Coin bas-gauche"
+
+#: includes/pikiz-options.php:322
+msgid "center"
+msgstr "center"
+
+#: includes/pikiz-options.php:370
+msgid ""
+"Check Auto if you want Pikiz buttons to be added automatically on all images "
+"and text of your website"
+msgstr ""
+"Cochez Auto si vous voulez que les boutons de Pikiz soient ajoutés "
+"automatiquement à toutes images et textes de votre site"

@@ -13,7 +13,7 @@ class wp_pikiz_media {
   {
     ?>
     <a href="#" id="pikiz-insert-media" class="button">
-      <img src="<?php echo PIKIZ_PLUGIN_URL. 'images/icon.png' ?>"/>Caption an image</a>
+      <img src="<?php echo PIKIZ_PLUGIN_URL. 'images/icon.png' ?>"/><?php echo __( 'Caption an image', 'pikiz' ); ?></a>
     <?php
   }
 

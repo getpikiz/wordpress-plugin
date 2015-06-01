@@ -28,15 +28,15 @@ class wp_pikiz_options {
 
    add_settings_field(
      'api_key', // ID
-     'API Key', // Title
-     array( __class__, 'api_key_callback' ), // Callback
+     __('Api key', 'pikiz'), // Title
+     array(__class__, 'api_key_callback'), // Callback
      'pikiz-setting-admin', // Page
      'pikiz_section_id' // Section
    );
 
    add_settings_field(
      'allow_frontend',
-     'Allow Pikiz on frontend',
+     __('Allow Pikiz on frontend', 'pikiz'),
      array( __class__, 'allow_frontend_callback' ),
      'pikiz-setting-admin',
      'pikiz_section_id'
@@ -44,7 +44,7 @@ class wp_pikiz_options {
 
    add_settings_field(
      'style',
-     'Button style',
+     __('Button style', 'pikiz'),
      array( __class__, 'style_callback' ),
      'pikiz-setting-admin',
      'pikiz_section_id'
@@ -52,7 +52,7 @@ class wp_pikiz_options {
 
    add_settings_field(
      'size',
-     'Button size',
+     __('Button size', 'pikiz'),
      array( __class__, 'size_callback' ),
      'pikiz-setting-admin',
      'pikiz_section_id'
@@ -60,15 +60,23 @@ class wp_pikiz_options {
 
    add_settings_field(
      'language',
-     'Button Language',
+     __('Button Language', 'pikiz'),
      array( __class__, 'language_callback' ),
      'pikiz-setting-admin',
      'pikiz_section_id'
    );
 
+    add_settings_field(
+      'auto',
+      __('Auto', 'pikiz'),
+      array( __class__, 'auto_callback' ),
+      'pikiz-setting-admin',
+      'pikiz_section_id'
+    );
+
    add_settings_field(
      'type',
-     'Content type',
+     __('Content type', 'pikiz'),
      array( __class__, 'type_callback' ),
      'pikiz-setting-admin',
      'pikiz_section_id'
@@ -76,7 +84,7 @@ class wp_pikiz_options {
 
    add_settings_field(
      'position',
-     'Button position',
+     __('Button position', 'pikiz'),
      array( __class__, 'position_callback' ),
      'pikiz-setting-admin',
      'pikiz_section_id'
@@ -84,7 +92,7 @@ class wp_pikiz_options {
 
    add_settings_field(
      'hover',
-     'Display image button on hover',
+     __('Display image button on hover', 'pikiz'),
      array( __class__, 'hover_callback' ),
      'pikiz-setting-admin',
      'pikiz_section_id'
@@ -95,8 +103,8 @@ class wp_pikiz_options {
   {
     // This page will be under "Settings"
     add_options_page(
-      'Pikiz settings',
-      'Pikiz settings',
+      __('Pikiz settings', 'pikiz'),
+      __('Pikiz settings', 'pikiz'),
       'manage_options',
       'pikiz-setting-admin',
       array( __class__, 'create_admin_page' )
@@ -124,34 +132,29 @@ class wp_pikiz_options {
                 ?>
               </td>
               <td>
-                <h3 class="h4"><b>Buttons overview</b></h3>
+                <h3 class="h4"><b><?php echo __('Buttons overview', 'pikiz') ?></b></h3>
                 <div class="embed-overview">
                   <div data-caption-img-btn>
-                    <h4 class="h5">Caption image button</h4>
+                    <h4 class="h5"><?php echo __('Caption image button', 'pikiz') ?></h4>
                     <iframe data-pikiz-img-btn-overview></iframe>
                   </div>
 
                   <div data-quote-text-btn style="display: block;">
-                    <h4 class="h5">Quote text button</h4>
+                    <h4 class="h5"><?php echo __('Quote text button', 'pikiz') ?></h4>
                     <iframe data-pikiz-text-btn-overview></iframe>
                   </div>
                 </div>
                 <div>
-                  <p data-auto-info class="description">
-                    Uncheck Auto if you want to add Pikiz button only on specific images of your website.
-                  </p>
-                  <label><strong>Auto</strong> <input type="checkbox" data-button-auto checked="ckecked" class="disable_allow"></label>
-
                   <div data-auto-fieldset>
-                    <h3 class="h4">Embed code</h3>
+                    <h3 class="h4"><?php echo __('Embed code', 'pikiz') ?></h3>
                     <table>
                       <tbody>
                         <tr>
-                          <td><label for="url">Url of the image :</label></td>
+                          <td><label for="url"><?php echo __('Url of the image :', 'pikiz') ?></label></td>
                           <td><input type="url" id="url"  data-button-url class="disable_allow"></td>
                         </tr>
                         <tr>
-                          <td><label for="target">Target (use CSS selector to target the image) :</label></td>
+                          <td><label for="target"><?php echo __('Target (use CSS selector to target the image) :', 'pikiz') ?></label></td>
                           <td><input type="text" id="target" data-button-target class="disable_allow"></td>
                         </tr>
                       </tbody>
@@ -174,8 +177,8 @@ class wp_pikiz_options {
       <input type="text" id="api_key" name="pikiz_option_name[api_key]" value="<?php
       echo isset( self::$options['api_key'] ) ? esc_attr( self::$options['api_key']) : ''
       ?>"/>
-      <p class="description" id="api_key-description">Enter your
-        <a href="https://app.getpikiz.com" target="_blank">API Key</a>
+      <p class="description" id="api_key-description"><?php echo __('Enter your', 'pikiz') ?>
+        <a href="https://app.getpikiz.com" target="_blank"><?php echo __('API Key', 'pikiz') ?></a>
       </p>
     <?php
   }
@@ -194,19 +197,18 @@ class wp_pikiz_options {
   public static function style_callback()
   {
     ?>
-    <fieldset class="disable_allow"><legend class="screen-reader-text"><span>Button style</span></legend>
+    <fieldset class="disable_allow"><legend class="screen-reader-text"><span><?php echo __('Button style', 'pikiz') ?></span></legend>
       <label title="Orange"><input type="radio" name="pikiz_option_name[style]" value="orange"
-        <?php if(!isset( self::$options['style']) ||
-        (isset( self::$options['style'] ) && self::$options['style'] === 'orange') ) { ?>
+        <?php if(isset( self::$options['style'] ) && self::$options['style'] === 'orange') { ?>
         checked="checked"
         <?php } ?>
-        data-button-orange /> Orange
+        data-button-orange /> <?php echo __('Orange', 'pikiz') ?>
       </label><br>
       <label title="White"><input type="radio" name="pikiz_option_name[style]" value="white"
         <?php if(isset( self::$options['style'] ) && self::$options['style'] === 'white' ) { ?>
         checked="checked"
         <?php } ?>
-        data-button-white /> White
+        data-button-white /> <?php echo __('White', 'pikiz') ?>
       </label><br>
     </fieldset>
     <?php
@@ -221,13 +223,13 @@ class wp_pikiz_options {
          (isset( self::$options['size'] ) && self::$options['size'] === 'default') ) { ?>
         checked="checked"
         <?php } ?>
-        data-button-default /> Default
+        data-button-default /> <?php echo __('Default', 'pikiz') ?>
       </label><br>
       <label title="White"><input type="radio" name="pikiz_option_name[size]" value="large"
         <?php if(isset( self::$options['size'] ) && self::$options['size'] === 'large' ) { ?>
         checked="checked"
         <?php } ?>
-        data-button-large /> Large
+        data-button-large /> <?php echo __('Large', 'pikiz') ?>
       </label><br>
     </fieldset>
     <?php
@@ -241,13 +243,28 @@ class wp_pikiz_options {
     <?php if(isset( self::$options['language'] ) && self::$options['language'] === 'en' ) { ?>
       selected="selected"
     <?php } ?>
-      >English</option>
+      ><?php echo __('English', 'pikiz') ?></option>
       <option value="it"
     <?php if(isset( self::$options['language'] ) && self::$options['language'] === 'it' ) { ?>
       selected="selected"
     <?php } ?>
-      >Italian</option>
+      ><?php echo __('Italian', 'pikiz') ?></option>
     </select>
+    <?php
+  }
+
+  public static function auto_callback()
+  {
+    ?>
+    <input type="checkbox" name="pikiz_option_name[auto]" class="disable_allow"
+    <?php if(!isset(self::$options['auto']) ||
+    (isset(self::$options['auto']) && self::$options['auto'])) { ?>
+    checked="checked"
+    <?php } ?>
+    data-button-auto />
+    <p data-auto-info class="description">
+      <?php echo __('Uncheck Auto if you want to add Pikiz button only on specific images of your website.', 'pikiz') ?>
+    </p>
     <?php
   }
 
@@ -259,17 +276,17 @@ class wp_pikiz_options {
     <?php if(isset( self::$options['type'] ) && self::$options['type'] === 'both' ) { ?>
       selected="selected"
     <?php } ?>
-      >Image and Text</option>
+      ><?php echo __('Image and Text', 'pikiz') ?></option>
       <option value="image"
     <?php if(isset( self::$options['type'] ) && self::$options['type'] === 'image' ) { ?>
       selected="selected"
     <?php } ?>
-      >Image</option>
+      ><?php echo __('Image', 'pikiz') ?></option>
       <option value="text"
     <?php if(isset( self::$options['type'] ) && self::$options['type'] === 'text' ) { ?>
       selected="selected"
     <?php } ?>
-      >Text</option>
+      ><?php echo __('Text', 'pikiz') ?></option>
     </select>
     <?php
   }
@@ -282,27 +299,27 @@ class wp_pikiz_options {
     <?php if(isset( self::$options['position'] ) && self::$options['position'] === 'topLeft' ) { ?>
       selected="selected"
     <?php } ?>
-      >top-left corner</option>
+      ><?php echo __('top-left corner', 'pikiz') ?></option>
       <option value="topRight"
     <?php if(isset( self::$options['position'] ) && self::$options['position'] === 'topRight' ) { ?>
       selected="selected"
     <?php } ?>
-      >top-right corner</option>
+      ><?php echo __('top-right corner', 'pikiz') ?></option>
       <option value="bottomRight"
     <?php if(isset( self::$options['position'] ) && self::$options['position'] === 'bottomRight' ) { ?>
       selected="selected"
     <?php } ?>
-      >bottom-right corner</option>
+      ><?php echo __('bottom-right corner', 'pikiz') ?></option>
       <option value="bottomLeft"
     <?php if(isset( self::$options['position'] ) && self::$options['position'] === 'bottomLeft' ) { ?>
       selected="selected"
     <?php } ?>
-      >bottom-left corner</option>
+      ><?php echo __('bottom-left corner', 'pikiz') ?></option>
       <option value="center"
     <?php if(isset( self::$options['position'] ) && self::$options['position'] === 'center' ) { ?>
       selected="selected"
     <?php } ?>
-      >center</option>
+      ><?php echo __('center', 'pikiz') ?></option>
     </select>
     <?php
   }
@@ -322,7 +339,7 @@ class wp_pikiz_options {
   {
     $new_input = array();
     $fields = array('api_key', 'allow_frontend', 'style', 'size', 'language', 'type', 'position', 'hover');
-    $booleanFields = array('allow_frontend', 'hover');
+    $booleanFields = array('allow_frontend', 'auto', 'hover');
 
     foreach($fields as $field) {
       if(isset($input[$field])) {
@@ -339,14 +356,20 @@ class wp_pikiz_options {
 
   public static function add_options_scripts()
   {
-    wp_enqueue_script(
-      'pikiz_options_js',
-      PIKIZ_PLUGIN_URL . 'js/pikiz-options.js',
-      array('jquery'),
-      '1.0',
-      true
-    );
+    wp_register_script(
+    'pikiz_options_js',
+    PIKIZ_PLUGIN_URL . 'js/pikiz-options.js',
+    array('jquery'),
+    '1.0',
+    true);
 
+    wp_enqueue_script('pikiz_options_js');
+    wp_localize_script( 'pikiz_options_js', 'WPPikiz', array(
+      'strings' => array(
+        'uncheck_auto' => __('Uncheck Auto if you want to add Pikiz button only on specific images of your website.' , 'pikiz'),
+        'check_auto' => __('Check Auto if you want Pikiz buttons to be added automatically on all images and text of your website' , 'pikiz')
+      )
+    ));
     wp_enqueue_style(
       'pikiz_options_css',
       PIKIZ_PLUGIN_URL . 'css/main.css'

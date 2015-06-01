@@ -8,8 +8,8 @@ Author:      TEKXL
 Author URI:  http://tekxl.com
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Domain Path: /languages
-Text Domain: my-toolset
+Domain Path: /languages/
+Text Domain: pikiz
 */
 
 define( 'PIKIZ_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -19,8 +19,11 @@ require_once( PIKIZ_PLUGIN_DIR . 'includes/pikiz-media.php' );
 require_once( PIKIZ_PLUGIN_DIR . 'includes/pikiz-options.php' );
 require_once( PIKIZ_PLUGIN_DIR . 'includes/pikiz-frontend.php' );
 
-register_activation_hook( __FILE__, array( 'Akismet', 'plugin_activation' ) );
-register_deactivation_hook( __FILE__, array( 'Akismet', 'plugin_deactivation' ) );
+function load_pikiz_textdomain() {
+  load_plugin_textdomain( 'pikiz', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+}
+
+add_action( 'plugins_loaded', 'load_pikiz_textdomain' );
 
 if (is_admin()) {
   wp_pikiz_media::init();

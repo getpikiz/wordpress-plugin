@@ -100,6 +100,10 @@ jQuery(function ($) {
 
   $allowFontend.on('change', function () {
     $disableForAllow.prop('disabled', !this.checked);
+
+    if (!this.checked || (this.checked && type == 'text')) {
+      $positionFieldset.prop('disabled', true);
+    }
   });
 
   $pikizType.on('change', function () {
@@ -161,11 +165,10 @@ jQuery(function ($) {
   $buttonAuto.on('change', function () {
     if (this.checked) {
       type = $pikizType.val();
-      $autoInfo.text('Uncheck Auto if you want to add Pikiz button only on specific images of your website.');
+      $autoInfo.text(WPPikiz.strings.uncheck_auto);
     } else {
       type = 'inline';
-      $autoInfo.text('Check Auto if you want Pikiz buttons to be added automatically on all images and text' +
-        ' of your website');
+      $autoInfo.text(WPPikiz.strings.check_auto);
       checkValues();
     }
 
@@ -206,18 +209,20 @@ jQuery(function ($) {
   var checkValues = function () {
     var autoValue = $buttonAuto.prop('checked');
     var allowFontendValue = $allowFontend.prop('checked');
-    $autoFieldset.toggle(!autoValue);
-    $buttonCode.toggle(!autoValue);
-    $typeFieldset.prop('disabled', !autoValue);
-    $disableForAllow.prop('disabled', !allowFontendValue);
-
     if (!autoValue) {
       type = 'inline';
     } else {
       type = $pikizType.val();
     }
 
-    $positionFieldset.prop('disabled', type == 'text');
+    $autoFieldset.toggle(!autoValue);
+    $buttonCode.toggle(!autoValue);
+    $typeFieldset.prop('disabled', !autoValue);
+    $disableForAllow.prop('disabled', !allowFontendValue);
+
+    if (!allowFontendValue || (allowFontendValue && type == 'text')) {
+      $positionFieldset.prop('disabled', true);
+    }
 
     setValue('url', $inputUrl.val());
     setValue('target', $inputTarget.val());
