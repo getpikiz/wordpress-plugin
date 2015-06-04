@@ -30,7 +30,6 @@ Get Pikiz now! Get in the fun!.
 
 1. Upload the 'pikiz' directory to the '/wp-content/plugins/' directory
 2. Activate the plugin on the 'Plugins' page
-
 ## Demo
-* [Images](https://app.getpikiz.com/demos/image)
-* [Text](https://app.getpikiz.com/demos/text)
+[Images](https://app.getpikiz.com/demos/image)
+[Text](https://app.getpikiz.com/demos/text)
