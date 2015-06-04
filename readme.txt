@@ -1,8 +1,11 @@
 === Pikiz ===
 Contributors: getpikiz
 Tags: pikiz, getpikiz, image editor, caption image, quote image, image filter, share image, social media, social, image, caption, quote, share,
-Requires at least: 4.0
+Requires at least: 3.3
 Tested up to: 4.2.2
+Stable tag: 1.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Allow your visitors to add caption on your website content images and transform any text into
 images.
