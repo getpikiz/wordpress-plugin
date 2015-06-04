@@ -1,13 +1,9 @@
-=== Pikiz ===
-Contributors: getpikiz
-Tags: pikiz, getpikiz, image editor, caption image, quote image, image filter, share image, social media, social, image, caption, quote, share,
-Requires at least: 4.0
-Tested up to: 4.2.2
+Pikiz plugin for Wordpress
+--------------------------
 
-Allow your visitors to add caption on your website content images and transform any text into
-images.
+Allow your visitors to caption your website content images and transform any text into images.
 
-== Description ==
+## Description
 
  The easiest and fastest way to create and share viral images from anywhere withanyone.
  The Pikiz plugin allows your website users to add text to any images and transform any text into
@@ -15,7 +11,7 @@ images.
  Once installed, they can just click on the “Caption this” button appearing while you mouse over
  image or on the “Quote this” button when you select text.
 
-= Features =
+## Features
 
 * 100+ fonts to impress.
 * 200+ high quality background images.
@@ -30,12 +26,10 @@ images.
 
 Get Pikiz now! Get in the fun!.
 
-== Installation ==
+## Installation
 
 1. Upload the 'pikiz' directory to the '/wp-content/plugins/' directory
 2. Activate the plugin on the 'Plugins' page
-
-== Screenshots ==
-1. Pikiz for anyone.
-1. Pikiz for websites.
-2. Pikiz for wordpress editor.
+## Demo
+[Images](https://app.getpikiz.com/demos/image)
+[Text](https://app.getpikiz.com/demos/text)
