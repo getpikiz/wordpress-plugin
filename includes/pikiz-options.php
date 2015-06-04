@@ -368,7 +368,8 @@ class wp_pikiz_options {
       'strings' => array(
         'uncheck_auto' => __('Uncheck Auto if you want to add Pikiz button only on specific images of your website.' , 'pikiz'),
         'check_auto' => __('Check Auto if you want Pikiz buttons to be added automatically on all images and text of your website' , 'pikiz')
-      )
+      ),
+      'PIKIZ_URL' => PIKIZ_URL
     ));
     wp_enqueue_style(
       'pikiz_options_css',

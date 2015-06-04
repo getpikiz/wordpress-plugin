@@ -1,6 +1,5 @@
 ;
 jQuery(function ($) {
-  var PIKIZ_URL = "https://localhost:5000";
   var options = {
     text: {
       type: 'text',
@@ -43,7 +42,7 @@ jQuery(function ($) {
       window.Pikiz.init(WPPikiz.options.api_key, json);
     });
     s.async = true;
-    s.src= PIKIZ_URL + "/scripts/embed/pikiz.js";
+    s.src= WPPikiz.PIKIZ_URL + "/scripts/embed/pikiz.js";
     g.parentNode.insertBefore(s,g);
   }
 });

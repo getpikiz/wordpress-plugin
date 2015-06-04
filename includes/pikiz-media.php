@@ -19,13 +19,18 @@ class wp_pikiz_media {
 
   public static function include_pikiz_js_file()
   {
-    wp_enqueue_script(
-      'pikiz_js',
+    wp_register_script(
+      'pikiz_media_js',
       PIKIZ_PLUGIN_URL . 'js/pikiz-media.js',
       array('jquery'),
       '1.0',
       true
     );
+
+    wp_enqueue_script('pikiz_media_js');
+    wp_localize_script( 'pikiz_media_js', 'WPPikiz', array(
+      'PIKIZ_URL' => PIKIZ_URL
+    ));
 
     wp_enqueue_style(
       'pikiz_css',

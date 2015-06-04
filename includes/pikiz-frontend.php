@@ -23,7 +23,8 @@ class wp_pikiz_frontend {
 
     wp_enqueue_script('pikiz_frontend_js');
     wp_localize_script( 'pikiz_frontend_js', 'WPPikiz', array(
-      'options' => self::$options
+      'options' => self::$options,
+      'PIKIZ_URL' => PIKIZ_URL
     ));
   }
 }

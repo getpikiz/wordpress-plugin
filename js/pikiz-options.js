@@ -1,7 +1,6 @@
 ;
 jQuery(function ($) {
   'use strict';
-  var PIKIZ_URL = "https://localhost:5000";
 
   var options = {
     text: {
@@ -61,19 +60,19 @@ jQuery(function ($) {
 
   function reloadOverview () {
     if (type === 'image') {
-      $imgFrameOverview.attr('src', PIKIZ_URL + '/buttons/templates/' + options[type].language + '/' +
+      $imgFrameOverview.attr('src', WPPikiz.PIKIZ_URL + '/buttons/templates/' + options[type].language + '/' +
     options[type].size + '/image/' + options[type].style + '.html');
       $quoteTextBtn.css('display', 'none');
       $captionImgBtn.css('display', 'block');
     } else if (type === 'text') {
-      $textFrameOverview.attr('src', PIKIZ_URL + '/buttons/templates/' + options[type].language + '/' +
+      $textFrameOverview.attr('src', WPPikiz.PIKIZ_URL + '/buttons/templates/' + options[type].language + '/' +
     options[type].size + '/text/' + options[type].style + '.html');
       $captionImgBtn.css('display', 'none');
       $quoteTextBtn.css('display', 'block');
     } else {
-      $imgFrameOverview.attr('src', PIKIZ_URL + '/buttons/templates/' + options[type].language + '/' +
+      $imgFrameOverview.attr('src', WPPikiz.PIKIZ_URL + '/buttons/templates/' + options[type].language + '/' +
     options[type].size + '/image/' + options[type].style + '.html');
-      $textFrameOverview.attr('src', PIKIZ_URL + '/buttons/templates/' + options[type].language + '/' +
+      $textFrameOverview.attr('src', WPPikiz.PIKIZ_URL + '/buttons/templates/' + options[type].language + '/' +
     options[type].size + '/text/' + options[type].style + '.html');
       $captionImgBtn.css('display', 'block');
       $quoteTextBtn.css('display', 'block');

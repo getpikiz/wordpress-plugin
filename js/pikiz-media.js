@@ -1,14 +1,13 @@
 ;
 jQuery(function ($) {
   'use strict';
-  var PIKIZ_URL = "https://localhost:5000";
 
   (function (w, d) {
     if (!w.Pikiz || (w.Pikiz && typeof w.Pikiz.init !== "function") ) {
       var _s = d.createElement("script");
-     _s.src = PIKIZ_URL + "/scripts/embed/pikiz.js";
+     _s.src = WPPikiz.PIKIZ_URL + "/scripts/embed/pikiz.js";
      _s.addEventListener("load", function () {
-       w.Pikiz.init("", {"appUrl": PIKIZ_URL, "auto": false});
+       w.Pikiz.init("", {"appUrl": WPPikiz.PIKIZ_URL, "auto": false});
      });
      d.body.appendChild(_s);
     }
@@ -26,7 +25,7 @@ jQuery(function ($) {
     var first = files[0].toJSON();
 
     if (window.Pikiz) {
-      var url = PIKIZ_URL +
+      var url = WPPikiz.PIKIZ_URL +
         '/images/create?origin=wordpress_plugin' +
         '&img=' + first.url +
         '&apikey=' +
@@ -37,7 +36,7 @@ jQuery(function ($) {
   });
 
   window.addEventListener('message', function (e) {
-    if (e.origin === PIKIZ_URL && e.data.action === 'close') {
+    if (e.origin === WPPikiz.PIKIZ_URL && e.data.action === 'close') {
       var html = '<a href="' + e.data.pageUrl +'">' +
         '<img src="' + e.data.imgUrl + '" />' +
       '</a>';

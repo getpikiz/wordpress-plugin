@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Pikiz
-Plugin URI:
+Plugin URI: http://getpikiz.com
 Description: Easily create and share viral images from anywhere with anyone on web
 Version:     0.1
-Author:      TEKXL
-Author URI:  http://tekxl.com
+Author:      Pikiz
+Author URI:  http://getpikiz.com
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Domain Path: /languages/
@@ -14,6 +14,7 @@ Text Domain: pikiz
 
 define( 'PIKIZ_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'PIKIZ_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'PIKIZ_URL', 'https://app.getpikiz.com' );
 
 require_once( PIKIZ_PLUGIN_DIR . 'includes/pikiz-media.php' );
 require_once( PIKIZ_PLUGIN_DIR . 'includes/pikiz-options.php' );
